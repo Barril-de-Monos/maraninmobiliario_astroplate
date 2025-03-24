@@ -11,3 +11,11 @@ export type Button = {
   label: string;
   link: string;
 };
+
+export interface Product {
+  title: string;
+  image: string;
+  description: string;
+  link: string;
+  category: string;
+}

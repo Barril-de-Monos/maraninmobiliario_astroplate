@@ -1,0 +1,30 @@
+---
+interface Props {
+  reasons: string[];
+}
+
+const { reasons } = Astro.props;
+---
+
+<section class="reasons-section">
+  <h2>Reasons to Invest in the Yucatán Peninsula</h2>
+  <ul>
+    {reasons.map(reason => (
+      <li>{reason}</li>
+    ))}
+  </ul>
+</section>
+
+<style>
+.reasons-section {
+  padding: 2rem;
+  text-align: center;
+}
+.reasons-section ul {
+  list-style: none;
+  padding: 0;
+}
+.reasons-section li {
+  margin: 0.5rem 0;
+}
+</style>

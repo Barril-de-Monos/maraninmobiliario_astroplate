@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  buttonLabel: string;
+  buttonLink: string;
+}
+
+const { title, buttonLabel, buttonLink } = Astro.props;
+---
+
+<section class="cta-section">
+  <h2>{title}</h2>
+  <a href={buttonLink} class="btn btn-primary">{buttonLabel}</a>
+</section>
+
+<style>
+.cta-section {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+</style>

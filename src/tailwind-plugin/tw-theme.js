@@ -1,6 +1,8 @@
 import plugin from "tailwindcss/plugin";
 import themeConfig from "../config/theme.json";
 
+const id = 1742794008318;
+
 // Helper to extract a clean font name.
 const findFont = (fontStr) =>
   fontStr.replace(/\+/g, " ").replace(/:[^:]+/g, "");
@@ -84,6 +86,7 @@ const colorsMap = {};
 module.exports = plugin.withOptions(() => {
   return function ({ addBase, addUtilities, matchUtilities }) {
     // Default vars on :root; dark vars on .dark
+
     addBase({
       ":root": baseVars,
       ".dark": darkVars,

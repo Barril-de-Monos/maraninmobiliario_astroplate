@@ -1,0 +1,40 @@
+---
+interface Testimonial {
+  quote: string;
+  author: string;
+}
+
+interface Props {
+  testimonials: Testimonial[];
+}
+
+const { testimonials } = Astro.props;
+---
+
+<section class="testimonials-section">
+  <h2>What Customers Love About Us</h2>
+  <div class="testimonials">
+    {testimonials.map(testimonial => (
+      <div class="testimonial">
+        <blockquote>{testimonial.quote}</blockquote>
+        <p>- {testimonial.author}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+.testimonials-section {
+  padding: 2rem;
+  text-align: center;
+}
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.testimonial {
+  margin: 1rem;
+  max-width: 300px;
+}
+</style>

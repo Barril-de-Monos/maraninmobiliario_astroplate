@@ -50,4 +50,30 @@ features:
       enable: false
       label: ""
       link: ""
+
+# Product Categories
+productCategories:
+  - title: "Premium Lots"
+    image: "/images/premium-lots.jpg"
+    content: "Discover our exclusive premium lots, perfect for building your dream home in a prime location."
+    button:
+      enable: true
+      label: "Explore Premium Lots"
+      link: "/premium-lots"
+
+  - title: "Fully Built Houses"
+    image: "/images/fully-built-houses.jpg"
+    content: "Move into a fully built house with all the modern amenities and features you desire."
+    button:
+      enable: true
+      label: "Explore Fully Built Houses"
+      link: "/fully-built-houses"
+
+  - title: "Premium Commercial Lots"
+    image: "/images/premium-commercial-lots.jpg"
+    content: "Invest in premium commercial lots that offer great potential for business growth."
+    button:
+      enable: true
+      label: "Explore Premium Commercial Lots"
+      link: "/premium-commercial-lots"
 ---
