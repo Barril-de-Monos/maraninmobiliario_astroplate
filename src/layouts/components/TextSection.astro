@@ -7,9 +7,9 @@ interface Props {
 const { title, content } = Astro.props;
 ---
 
-<section class="text-section">
-  <h2>{title}</h2>
-  <p>{content}</p>
+<section class="text-section py-8 text-center">
+  <h2 class="text-3xl font-semibold mb-4">{title}</h2>
+  <p class="text-lg">{content}</p>
 </section>
 
 <style>

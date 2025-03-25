@@ -8,8 +8,8 @@ interface Props {
 const { title, buttonLabel, buttonLink } = Astro.props;
 ---
 
-<section class="cta-section">
-  <h2>{title}</h2>
+<section class="cta-section py-8 text-center bg-gray-100">
+  <h2 class="text-3xl font-semibold mb-4">{title}</h2>
   <a href={buttonLink} class="btn btn-primary">{buttonLabel}</a>
 </section>
 

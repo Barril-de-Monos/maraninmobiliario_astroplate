@@ -6,11 +6,11 @@ interface Props {
 const { reasons } = Astro.props;
 ---
 
-<section class="reasons-section">
-  <h2>Reasons to Invest in the Yucatán Peninsula</h2>
-  <ul>
+<section class="reasons-section py-8 text-center">
+  <h2 class="text-3xl font-semibold mb-8">Reasons to Invest in the Yucatán Peninsula</h2>
+  <ul class="list-none p-0">
     {reasons.map(reason => (
-      <li>{reason}</li>
+      <li class="mb-2">{reason}</li>
     ))}
   </ul>
 </section>

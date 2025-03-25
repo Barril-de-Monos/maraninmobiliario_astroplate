@@ -11,30 +11,14 @@ interface Props {
 const { testimonials } = Astro.props;
 ---
 
-<section class="testimonials-section">
-  <h2>What Customers Love About Us</h2>
-  <div class="testimonials">
+<section class="testimonials-section py-8 text-center">
+  <h2 class="text-3xl font-semibold mb-8">What Customers Love About Us</h2>
+  <div class="testimonials flex flex-wrap justify-center">
     {testimonials.map(testimonial => (
-      <div class="testimonial">
-        <blockquote>{testimonial.quote}</blockquote>
-        <p>- {testimonial.author}</p>
+      <div class="testimonial max-w-xs m-4">
+        <blockquote class="italic mb-2">"{testimonial.quote}"</blockquote>
+        <p class="font-semibold">- {testimonial.author}</p>
       </div>
     ))}
   </div>
 </section>
-
-<style>
-.testimonials-section {
-  padding: 2rem;
-  text-align: center;
-}
-.testimonials {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.testimonial {
-  margin: 1rem;
-  max-width: 300px;
-}
-</style>

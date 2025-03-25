@@ -1,7 +1,5 @@
 ---
 import ImageMod from "./ImageMod.astro";
-
-// filepath: c:\Users\oscar\repos\maraninmobiliario_astroplate\src\layouts\components\ProductsSection.astro
 import type { Product } from '../../types';
 
 interface Props {
@@ -11,15 +9,15 @@ interface Props {
 const { products } = Astro.props;
 ---
 
-<section class="products-section">
-  <h2>Our Products</h2>
-  <div class="products">
+<section class="products-section py-8 text-center">
+  <h2 class="text-3xl font-semibold mb-8">Our Products</h2>
+  <div class="products flex flex-wrap justify-center">
     {products.map(product => (
-      <div class="product">
+      <div class="product max-w-xs m-4">
         <ImageMod src={product.image} alt={product.title} width={600} height={400} category={product.category} />
-        <h3>{product.title}</h3>
-        <p>{product.description}</p>
-        <a href={product.link} class="btn btn-secondary">Learn More</a>
+        <h3 class="text-xl font-semibold mt-4">{product.title}</h3>
+        <p class="text-base mt-2">{product.description}</p>
+        <a href={product.link} class="btn btn-secondary mt-4">Learn More</a>
       </div>
     ))}
   </div>

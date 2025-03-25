@@ -1,30 +1,31 @@
 ---
-import { plainify } from "@/lib/utils/textConverter";
-import ImageMod from "./ImageMod.astro";
-import Social from "./Social.astro";
+import type { CollectionEntry } from "astro:content";
+import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 
-const { data } = Astro.props;
-const { title, image, social } = data.data;
+interface Props {
+  data: CollectionEntry<"authors">;
+}
+
+const { data }: { data: CollectionEntry<"authors"> } = Astro.props;
 ---
 
-<div class="rounded bg-light p-8 text-center dark:bg-darkmode-light">
-  {
-    image && (
-      <ImageMod
-        class="mx-auto mb-6 rounded"
-        src={image}
-        alt={title}
-        width={120}
-        height={120}
-        format="webp"
-      />
-    )
-  }
-  <h4 class="mb-3">
-    <a href={`/authors/${data.id}`}>{title}</a>
-  </h4>
-  <p class="mb-4">
-    {plainify(data.body?.slice(0, 100))}
-  </p>
-  <Social source={social} className="social-icons" />
+<div class="author-card p-4 bg-white rounded-lg shadow-md text-center dark:bg-darkmode-light">
+  {data.data.image ? <img src={data.data.image} alt={data.data.title} class="w-24 h-24 rounded-full mx-auto mb-4" /> : null}
+  <h3 class="text-xl font-semibold">{data.data.title}</h3>
+  <p class="text-gray-600 dark:text-darkmode-text-light">{data.data.description}</p>
+  <div class="mt-4 flex justify-center space-x-4">
+    {data.data.social ? data.data.social.map((social) => (
+      social && <a href={social.link} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
+        {social.icon === "FaGithub" && <FaGithub />}
+        {social.icon === "FaTwitter" && <FaTwitter />}
+        {social.icon === "FaLinkedin" && <FaLinkedin />}
+      </a>
+    )) : null}
+  </div>
 </div>
+
+<style>
+.author-card {
+  @apply p-4 bg-white rounded-lg shadow-md text-center dark:bg-darkmode-light;
+}
+</style>

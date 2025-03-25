@@ -19,3 +19,16 @@ export interface Product {
   link: string;
   category: string;
 }
+
+export interface UserProfile {
+  name: string;
+  bio: string;
+  image: string;
+}
+
+export interface AuthorCard {
+  name: string;
+  bio: string;
+  image: string;
+}
+

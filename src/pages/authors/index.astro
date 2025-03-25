@@ -1,5 +1,5 @@
 ---
-import AuthorCard from "@/components/AuthorCard.astro";
+import AuthorCard from "@/layouts/components/AuthorCard.astro";
 import Base from "@/layouts/Base.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import PageHeader from "@/partials/PageHeader.astro";
@@ -11,7 +11,7 @@ const authorIndex = (await getEntry(
   COLLECTION_FOLDER,
   "-index"
 )) as CollectionEntry<"authors">;
-const authors = await getSinglePage(COLLECTION_FOLDER);
+const authors = (await getSinglePage(COLLECTION_FOLDER)) as CollectionEntry<"authors">[];
 ---
 
 <Base title={authorIndex.data.title}>
