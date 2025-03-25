@@ -17,7 +17,7 @@ const { title, image, date, author, categories } = data.data;
   {
     image && (
       <ImageMod
-        class="mb-6 w-full rounded"
+        class="mb-6 w-full rounded-lg"
         src={image}
         alt={title}
         width={445}
@@ -56,3 +56,7 @@ const { title, image, date, author, categories } = data.data;
     read more
   </a>
 </div>
+
+<style>
+@import "@/styles/main.css"; /* Ensure main.css is imported to include all utility classes */
+</style>
